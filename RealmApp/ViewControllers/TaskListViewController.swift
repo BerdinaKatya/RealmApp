@@ -103,7 +103,8 @@ final class TaskListViewController: UITableViewController {
         let taskList = taskLists[indexPath.row]
         tasksVC.taskList = taskList
     }
-
+    
+    // MARK: - IBActions
     @IBAction func sortingList(_ sender: UISegmentedControl) {
         taskLists = sender.selectedSegmentIndex == 0
         ? taskLists.sorted(byKeyPath: "date")
@@ -112,6 +113,7 @@ final class TaskListViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    // MARK: - Private methods
     @objc private func addButtonPressed() {
         showAlert()
     }
